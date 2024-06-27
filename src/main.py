@@ -2,7 +2,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-from time_stretching import OLA
+from time_stretching import OLA, WSOLA, FrameShiftBoundaries
 
 
 
@@ -16,8 +16,8 @@ original_signal = np.sin(2 * np.pi * time_samples)
 
 
 
-ola = OLA(speed_factor=2.0)
-output_signal = ola.run(original_signal)
+wsola = WSOLA(speed_factor=2.0)
+output_signal = wsola.run(original_signal)
 
 
 print(original_signal.shape[0])
