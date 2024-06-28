@@ -57,11 +57,15 @@ class OLA(TSM):
         # We need to normalize our windowed frames by the sum of the overlapped window functions
         # so we don't get any amplitude fluctuations caused by the overlapping and adding
         if self.synthesis_hopsize == int(self.frame_size // 2):
+            # In this case the windows are spaced exactly 50% of frame size apart so they overlap perfectly to sum to a constant 1.0
+            # This is called the COLA constraint (Constant Overlap-Add Constraint)
             normalization = 1.0
         else:
-            normalization = self.synthesis_window.sum()
+            normalization = self.synthesis_window[0:self.analysis_hopsize].sum() * self.frame_size
 
         # Generate our synthesis_frames
+        print(normalization)
+        # Need element wise division by normalization?
         synthesis_frames = (analysis_frames * self.synthesis_window) / normalization
 
         # Reconstruct our signal by using the synthesis_frames
