@@ -2,7 +2,7 @@
 import numpy as np
 import numpy.typing as npt
 
-from time_stretching import FrameShiftBoundaries
+from custom import FrameShiftBoundaries
 
 
 
@@ -71,6 +71,9 @@ def split_into_frames(signal: npt.NDArray,
 #     frames = np.lib.stride_tricks.sliding_window_view(signal, frame_size)[::hopsize]
 
 #     return frames
+
+
+
     
 def reconstruct_from_frames(frames: npt.NDArray, hopsize: int) -> npt.NDArray:
     """

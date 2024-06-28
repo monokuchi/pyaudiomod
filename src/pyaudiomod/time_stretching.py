@@ -1,10 +1,9 @@
 
-from dataclasses import dataclass
-
 import numpy as np
 import numpy.typing as npt
 
-from sigproc import split_into_frames, reconstruct_from_frames, hann_window
+from sigproc import hann_window, split_into_frames, reconstruct_from_frames
+from custom import FrameShiftBoundaries
 
 
 
@@ -71,14 +70,6 @@ class OLA(TSM):
         # Reconstruct our signal by using the synthesis_frames
         return reconstruct_from_frames(synthesis_frames, self.synthesis_hopsize)
     
-
-@dataclass
-class FrameShiftBoundaries:
-    min_shift: int = -10
-    max_shift: int = 10
-
-    def __repr__(self) -> str:
-        return f"Min Shift: {self.min_shift} Max Shift: {self.max_shift}"
 
 class WSOLA(TSM):
     def __init__(self, 

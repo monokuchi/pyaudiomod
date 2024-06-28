@@ -1,0 +1,31 @@
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+
+
+[project]
+name = "pyaudiomod"
+version = "0.0.1"
+authors = [
+  { name="monokuchi", email="author@example.com" },
+]
+description = "Implements algorithms for audio pitch scaling and time stretching"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Topic :: Multimedia :: Sound/Audio",
+]
+keywords = ["audio", "tsm"]
+
+
+
+[project.urls]
+Homepage = "https://github.com/monokuchi/pyaudiomod"
+Issues = "https://github.com/monokuchi/pyaudiomod/issues"
+
+
