@@ -1,8 +1,10 @@
 
+#### Python ####
 __pycache__
-
 venv/
-
 dist/
-
 *.egg-info
+
+
+#### Audio Files ####
+audio_samples/
